@@ -19,7 +19,7 @@ const EachProduct = ({item, onAddToCartClick}) => {
   );
 };
 
-const ProductList = ({store}) => {
+const ProductList = (props, {store}) => {
   const products= store.getState().store_prod;
 
   return (
@@ -32,5 +32,8 @@ const ProductList = ({store}) => {
   );
 };
 
+ProductList.contextTypes= {
+  store: React.PropTypes.object
+};
 
 export default ProductList;

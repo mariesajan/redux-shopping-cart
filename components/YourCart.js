@@ -7,7 +7,7 @@ const EachCartItem = ({store_prod, item_quantity}) => {
   return (<li>{store_prod.item_name} - ${price} x {item_quantity}</li>);
 };
 
-const YourCart= ({store}) => {
+const YourCart= (props, {store}) => {
   const total = calc_total(store);
   let storeState= store.getState();
   let store_prod, cart_content, cart_items = storeState.cart_prod.item_ids,
@@ -42,6 +42,10 @@ const YourCart= ({store}) => {
       {cart_button}
     </div>
   );
+};
+
+YourCart.contextTypes= {
+  store: React.PropTypes.object
 };
 
 export default YourCart;
