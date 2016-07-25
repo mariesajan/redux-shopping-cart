@@ -1,23 +1,9 @@
 import React from "react";
 import { calc_total } from  "../reducers/shop_cart";
 import { onCheckout } from "../actions";
+import CartSection from "./CartSection";
+import EachCartItem from "./EachCartItem";
 
-//EachCartItem and CartSection are presentational components
-const EachCartItem = ({item_name, item_price, item_quantity}) => {
-  return (<li>{item_name} - ${item_price} x {item_quantity}</li>);
-};
-
-const CartSection = ({cart_content, total, cart_button}) => {
-  return (
-    <div>
-      <h4>Your Cart</h4>
-      <ul>{cart_content}</ul>
-      <label>Total: ${total}</label>
-      <br />
-      {cart_button}
-    </div>
-  );
-};
 
 const YourCart= (props, {store}) => {
   const total = calc_total(store);
@@ -49,7 +35,9 @@ const YourCart= (props, {store}) => {
       cart_button = <button disabled>Checkout</button>;
   }
   return (
-  <CartSection cart_content= {cart_content} total={total} cart_button= {cart_button} />
+    <CartSection
+      cart_content= {cart_content}
+      total={total} cart_button= {cart_button} />
   );
 };
 
