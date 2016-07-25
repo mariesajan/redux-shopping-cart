@@ -12,7 +12,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onAddToCartClick: (item_id) => {
-      console.log('hellooo... in mapDispatchToProps');
       dispatch(addToCart(item_id))
     }
   };

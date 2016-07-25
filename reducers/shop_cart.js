@@ -100,8 +100,8 @@ export const storeApp = combineReducers({
 
  export const calc_total= (state)=> {
     let total = 0, key;
-    let id_qty_obj = state.getState().cart_prod.id_and_quantity;
-    let storeProd = state.getState().store_prod;
+    let id_qty_obj = state.cart_prod.id_and_quantity;
+    let storeProd = state.store_prod;
     for(key in id_qty_obj){
       let storeProdItem = storeProd.filter(item => item.item_id === parseInt(key));
       let price = storeProdItem[0].item_price;

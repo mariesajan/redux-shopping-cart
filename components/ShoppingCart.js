@@ -1,6 +1,6 @@
 import React from "react";
 import Products from "./Products";
-import YourCart from "./YourCart";
+import YourCart from "../containers/YourCart";
 
 const ShoppingCart = () => {
   // To know the value in store, print store.getState()
